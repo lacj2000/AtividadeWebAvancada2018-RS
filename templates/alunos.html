@@ -9,7 +9,7 @@
     <thead > <th ><h3>ALUNOS</h3></th>   </thead>
     <thead> <th scope="col">Matricula</td> <th scope="col">Nome </th> </thead>    
 {% for aluno in alunos %}
-    <thead><th scope="row">{{aluno[0]}} </th> <th><a href="/boletim/{{aluno[0]}}">{{aluno[1]}}</a> </th> </thead>  
+    <thead><th scope="row">{{aluno[0]}} </th> <th><a href="/boletim/{{aluno[0]}}">{{aluno[1]}}</a> </th> <th><a href="/deletar/{{aluno[0]}}">Deletar</a></th> </thead>  
 {% endfor%}
 {% endif %}
 <thead><th><a href="/formAlunos">Novo Aluno</a></th></thead>

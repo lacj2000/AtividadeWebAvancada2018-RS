@@ -84,6 +84,12 @@ def deleteDiscip(id):
     conn.close()
     return redirect('/alunos')
 
+@boletim.route('/deletar/<int:id>')
+def deletA(id):
+    co=obterConn()
+    co.execute('delete from Aluno where Mat=? ',[id])
+    co.commit()
+    return redirect ('/alunos')
 
 if __name__  == '__main__':
     boletim.run()    
