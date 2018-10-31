@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block titulo %}
-    Cadastrar Disciplina
-{% endblock  %} 
+    ALterar Disciplina
+{% endblock  %}
 
 {% block conteudo %}
     <div class="">
-<form action="/cadastrarDisciplina/{{id}}" method="POST">
+<form action="/alterarDisciplina/{{id}}" method="POST">
     <label for="nome">Disciplina:</label>
     <input type="text" name="nome"></br>
     <label for="nota1">1ª Nota:</label>
@@ -19,4 +19,4 @@
     <button type="submit">Salvar</button>
   </form>
     </div>
-{% endblock  %} 
+{% endblock  %}

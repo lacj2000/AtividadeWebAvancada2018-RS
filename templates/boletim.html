@@ -20,16 +20,17 @@
 </thead>
 {% for disci in disciplinas %}
 <thead>
-        <th scope="row">{{disci[6]}}</th>
+<th scope="row"><a href="alterarDis/{{disci[0]}}">{{disci[6]}}</a></th>
         <th >{{disci[2]}}</th>
         <th >{{disci[3]}}</th>
         <th >{{disci[4]}}</th>
         <th >{{disci[5]}}</th>
         {% if ((disci[2])+(disci[3])+(disci[4])+(disci[5]))/4 >= 7  %}
-        <th >aprovado</th>
+        <th >Aprovado</th>
         {% else %}
-        <th>reprovado</th>
+        <th>Reprovado</th>
         {% endif %}
+        <th><a href="/deleteDis/{{disci[0]}}">deletar</a></th>
         
 
         
@@ -37,6 +38,6 @@
 </thead>
 {% endfor %}
 {% endif %}
-<thead><th><a href="">Nova Disciplina</a></th></thead>
+        <thead><th><a href="/formDisciplina/{{id}}">Nova Disciplina</a></th><th><a href="/alunos">Alunos</a></th></thead>
 </table>
 {% endblock  %} 

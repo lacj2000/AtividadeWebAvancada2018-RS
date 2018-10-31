@@ -31,9 +31,39 @@ def boleti(id):
     conn=obterConn()
     search=conn.execute('select * from Disciplinas where Mat=?;',[id])
     disciplinas=search.fetchall()
-   
-    return render_template('boletim.html',disciplinas=disciplinas)
+    return render_template('boletim.html',disciplinas=disciplinas,id=id)
 
+@boletim.route('/formDisciplina/<int:id>')
+def formDis(id):
+    return render_template('newDisc.html',id=id)
+
+@boletim.route('/cadastrarDisciplina/<int:id>',methods=['GET','POST'])
+def cadasDisci(id):
+    nome=str(request.form['nome'])
+    nota1 = float(request.form['nota1'])
+    nota2= float(request.form['nota2'])
+    nota3 = float(request.form['nota3'])
+    nota4 = float(request.form['nota4'])
+    conn=obterConn()
+    conn.execute('insert into Disciplinas(Mat,Nota1,Nota2,Nota3,Nota4,Nome)Values(?,?,?,?,?,?)',[id,nota1,nota2,nota3,nota4,nome])
+    conn.commit()
+    conn.close()
+    id1=str(id)
+    return redirect('boletim/'+id1+'')
+
+@boletim.route('/alterarDis/<int:ids>')
+def alterarDiscip(ids):
+
+    ida=str(id)
+    return redirect('boletim/'+ida+'')
+
+@boletim.route('/deleteDis/<int:id>')
+def deleteDiscip(id):
+    conn=obterConn()
+    conn.execute('delete from Disciplinas where id_disciplina=?',[id])
+    conn.commit()
+    conn.close()
+    return redirect('/alunos')
 
 
 if __name__  == '__main__':
