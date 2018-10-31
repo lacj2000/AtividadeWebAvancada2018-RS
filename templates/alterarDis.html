@@ -5,17 +5,17 @@
 
 {% block conteudo %}
     <div class="">
-<form action="/alterarDisciplina/{{id}}" method="POST">
+<form action="/alterarDis/{{disciplina[0]}}" method="POST">
     <label for="nome">Disciplina:</label>
-    <input type="text" name="nome"></br>
+    <input type="text" name="nome" value="{{disciplina[6]}}"></br>
     <label for="nota1">1ª Nota:</label>
-    <input type="number" name="nota1"></br>
+    <input type="number" name="nota1" value="{{disciplina[2 ]}}"></br>
     <label for="nota2">2ª Nota:</label>
-    <input type="number" name="nota2"></br>
+    <input type="number" name="nota2" value="{{disciplina[3]}}"></br>
     <label for="nota3">3ª Nota:</label>
-    <input type="number" name="nota3"></br>
+    <input type="number" name="nota3" value="{{disciplina[4]}}"></br>
     <label for="nota4">4ª Nota:</label>
-    <input type="number" name="nota4"></br>
+    <input type="number" name="nota4" value="{{disciplina[5]}}"></br>
     <button type="submit">Salvar</button>
   </form>
     </div>
