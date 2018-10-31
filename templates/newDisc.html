@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block titulo %}
+    Cadastrar Disciplina
+{% endblock  %} 
+
+{% block conteudo %}
+<form action="/cadastrarAluno" method="POST">
+    <label for= nome>Nome:</label>
+    <input type="text" name="nome">
+    <button type="submit">Salvar</button>
+  </form> 
+{% endblock  %} 

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block titulo %}
+    Boletim
+{% endblock  %} 
+{% block conteudo %}
+<table class="table table-dark">
+
+{% if disciplinas %}
+
+
+
+<thead><th><h3>Boletim</h3></th></thead>
+<thead>
+        <th scope="col">Matéria</th>
+        <th scope="col">1ª Nota</th>
+        <th scope="col">2º Nota</th>
+        <th scope="col">3º Nota</th>
+        <th scope="col">4º Nota</th>
+        <th scope="col">Situação</th>
+</thead>
+{% for disci in disciplinas %}
+<thead>
+        <th scope="row">{{disci[6]}}</th>
+        <th >{{disci[2]}}</th>
+        <th >{{disci[3]}}</th>
+        <th >{{disci[4]}}</th>
+        <th >{{disci[5]}}</th>
+        {% if ((disci[2])+(disci[3])+(disci[4])+(disci[5]))/4 >= 7  %}
+        <th >aprovado</th>
+        {% else %}
+        <th>reprovado</th>
+        {% endif %}
+        
+
+        
+        
+</thead>
+{% endfor %}
+{% endif %}
+<thead><th><a href="">Nova Disciplina</a></th></thead>
+</table>
+{% endblock  %} 

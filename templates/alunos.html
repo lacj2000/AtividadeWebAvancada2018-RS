@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block titulo %}
+    Alunos
+{% endblock  %} 
+{% block conteudo %}
+<table class="table table-dark">
+{%if alunos%}
+
+    <thead > <th ><h3>ALUNOS</h3></th>   </thead>
+    <thead> <th scope="col">Matricula</td> <th scope="col">Nome </th> </thead>    
+{% for aluno in alunos %}
+    <thead><th scope="row">{{aluno[0]}} </th> <th><a href="/boletim/{{aluno[0]}}">{{aluno[1]}}</a> </th> </thead>  
+{% endfor%}
+{% endif %}
+<thead><th><a href="/formAlunos">Novo Aluno</a></th></thead>
+</table>
+{% endblock  %} 
