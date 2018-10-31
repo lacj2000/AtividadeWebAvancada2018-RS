@@ -9,7 +9,7 @@
 
 
 
-<thead><th><h3>Boletim</h3></th></thead>
+<thead><th><h3>Boletim do {{nome}}</h3></th></thead>
 <thead>
         <th scope="col">Matéria</th>
         <th scope="col">1ª Nota</th>
@@ -20,7 +20,7 @@
 </thead>
 {% for disci in disciplinas %}
 <thead>
-<th scope="row"><a href="alterarDis/{{disci[0]}}">{{disci[6]}}</a></th>
+<th scope="row">{{disci[6]}}</th>
         <th >{{disci[2]}}</th>
         <th >{{disci[3]}}</th>
         <th >{{disci[4]}}</th>
@@ -30,7 +30,8 @@
         {% else %}
         <th>Reprovado</th>
         {% endif %}
-        <th><a href="/deleteDis/{{disci[0]}}">deletar</a></th>
+         <th><a href="/alterarDis/{{disci[0]}}">Alterar</a></th>
+        <th><a href="/deleteDis/{{disci[0]}}">Deletar</a></th>
         
 
         

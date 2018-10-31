@@ -30,8 +30,10 @@ def Alunos():
 def boleti(id):
     conn=obterConn()
     search=conn.execute('select * from Disciplinas where Mat=?;',[id])
+    search2=conn.execute('select Nome from Aluno where Mat=?;',[id])
     disciplinas=search.fetchall()
-    return render_template('boletim.html',disciplinas=disciplinas,id=id)
+    nome=search2.fetchone()[0]
+    return render_template('boletim.html',disciplinas=disciplinas,id=id,nome=nome)
 
 @boletim.route('/formDisciplina/<int:id>')
 def formDis(id):
